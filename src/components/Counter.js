@@ -6,8 +6,8 @@ import classes from './Counter.module.css';
 const Counter = () => {
   const dispatch = useDispatch();
   // This hook allow us to select an specific value into the estate object returned from the Store
-  const counter = useSelector(state => state.counter)
-  const showCounter = useSelector(state => state.showCounter)
+  const counter = useSelector(state => state.counter.counter)
+  const showCounter = useSelector(state => state.counter.showCounter)
 
   const toggleCounterHandler = () => {
     dispatch(counterActions.toggleCounter());
@@ -31,7 +31,7 @@ const Counter = () => {
       {showCounter && <div className={classes.value}>{counter}</div>}
       <div>
         <button onClick={incrementHandler}>Increment</button>
-        <button onClick={increaseHandler}>Increase</button>
+        <button onClick={increaseHandler}>Increase 10</button>
         <button onClick={decrementHandler}>Decrement</button>
       </div>
       <button onClick={toggleCounterHandler}>Toggle Counter</button>
