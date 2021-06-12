@@ -18,7 +18,12 @@ const Counter = () => {
   };
 
   const increaseHandler = () => {
-    dispatch(counterActions.increase(10));
+    // Send multiple values into payload
+    dispatch(counterActions.increase({
+      amount: 10,
+      arg2: 34,
+      arg3: 4
+    }));
   };
 
   const decrementHandler = () => {

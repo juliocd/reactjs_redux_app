@@ -15,7 +15,9 @@ const counterSlice = createSlice({
             state.counter--;
         },
         increase(state, action) {
-            state.counter = state.counter + action.payload;
+             // retrieve multiple arguments by the payload
+            console.log(action.payload.amount, action.payload.arg2, action.payload.arg3)
+            state.counter = state.counter + action.payload.amount;
         },
         toggleCounter(state) {
             state.showCounter = !state.showCounter;
